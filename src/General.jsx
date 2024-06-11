@@ -16,6 +16,7 @@ export function General() {
 
   return (
     <div className="personalInfo">
+      <h3>General Information</h3>
       <h1>Full Name</h1>
       <input
         placeholder="Full Name"

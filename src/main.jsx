@@ -4,7 +4,7 @@ import "./styles/index.css";
 import App from "./App";
 
 function Header(){
-  return <h3>CV Maker</h3>
+  return <h3 className="header">CV Maker</h3>
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(

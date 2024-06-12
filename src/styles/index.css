@@ -10,8 +10,9 @@
   padding: 0;
 }
 
-button{
+button {
   cursor: pointer;
+  border-radius: 10px;
   background: none;
 }
 .content {
@@ -29,11 +30,11 @@ button{
   font-size: 2.5rem;
   display: flex;
   gap: 1rem;
-
 }
 
 .personalInfo,
-.education, .work {
+.education,
+.work {
   width: 30vw;
   padding: 20px;
   padding-bottom: 30px;
@@ -48,8 +49,8 @@ button{
   justify-content: space-around;
   gap: 10px;
 }
-.work{
-  margin-bottom: 80px ;
+.work {
+  margin-bottom: 80px;
 }
 
 h1 {
@@ -65,8 +66,7 @@ h3 {
   width: 40vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  gap: 40px;
+  gap: 20px;
 }
 
 input {
@@ -77,4 +77,48 @@ input {
   width: 100%;
   height: 2rem;
   font-size: 0.8rem;
+}
+.container {
+  display: flex;
+}
+/*Preview styling*/
+.preview {
+  font-family: Arial,Cambria , Helvetica, sans-serif;
+  border: solid black 1px;
+  margin: 40px;
+  margin-bottom: 20px;
+  /*A4 size*/
+  width: 21cm;
+  height: 29.7cm;
+}
+.cv-header {
+  color: white;
+  height: 5cm;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #103137;
+  gap: 0.6cm;
+}
+.email,
+.phone,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.2cm;
+  font-size: 0.5cm;
+}
+
+.cv-header > h2 {
+  font-weight: 2cm;
+  font-size: 1.1cm;
+}
+
+.info {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 1cm;
 }

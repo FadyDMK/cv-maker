@@ -1,18 +1,20 @@
 import { useState } from "react";
-import { exampleInfo } from "./example-info";
 
-export function General() {
+export function General({generalInfo, setGeneralInfo}) {
   // eslint-disable-next-line no-unused-vars
-  const [generalInfo, setGeneralInfo] = useState(exampleInfo.personalInfo);
   const [open, setOpen] = useState(true);
   function handleNameChange(e) {
+    console.log(generalInfo.fullName)
     setGeneralInfo({ ...generalInfo, fullName: e.target.value });
   }
   function handleEmailChange(e) {
     setGeneralInfo({ ...generalInfo, email: e.target.value });
   }
   function handleNumberChange(e) {
-    setGeneralInfo({ ...generalInfo, email: e.target.value });
+    setGeneralInfo({ ...generalInfo, phoneNumber: e.target.value });
+  }
+  function handleLocationChange(e){
+    setGeneralInfo({ ...generalInfo, location: e.target.value });
   }
   function toggle(){
     setOpen(!open);
@@ -42,6 +44,12 @@ export function General() {
           placeholder="Phone Number"
           value={generalInfo.phoneNumber}
           onChange={handleNumberChange}
+        />
+        <h1>Location</h1>
+        <input
+          placeholder="Location"
+          value={generalInfo.location}
+          onChange={handleLocationChange}
         />
       </>)}
     </div>

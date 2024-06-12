@@ -1,7 +1,6 @@
 import { exampleInfo } from "./example-info";
 import { useState } from "react";
 
-
 export function Education() {
   return (
     <div>
@@ -12,6 +11,7 @@ export function Education() {
 
 export function EducationUnit() {
   // eslint-disable-next-line no-unused-vars
+  const [open, setOpen] = useState(false);
   const [educations, setEducations] = useState(exampleInfo.education);
   const [education, setEducation] = useState({
     degree: "Bachelor in Physics",
@@ -64,47 +64,57 @@ export function EducationUnit() {
       endDate: "6/2012",
     });
   }
+  function toggle() {
+    setOpen(!open);
+  }
 
   return (
     <div className="education">
-      <h1>University Name</h1>
-      <input
-        placeholder="university Name"
-        value={education.university}
-        onChange={handleUniNameChange}
-      />
-      <h1>Degree</h1>
-      <input
-        placeholder="Degree Name"
-        value={education.degree}
-        onChange={handleDegreeChange}
-      />
-      <h1>Location</h1>
-      <input
-        placeholder="Location"
-        value={education.grade}
-        onChange={handleLocationChange}
-      />
-      <h1>Grade</h1>
-      <input
-        placeholder="Grade"
-        value={education.grade}
-        onChange={handleGradeChange}
-      />
-      <h1>Start Date</h1>
-      <input
-        placeholder="Start Date"
-        value={education.startDate}
-        onChange={handleStartDateChange}
-      />
-      <h1>End Date</h1>
-      <input
-        placeholder="End Date"
-        value={education.endDate}
-        onChange={handleEndDateChange}
-      />
+      <button onClick={toggle}>
+        <h3>Education</h3>
+      </button>
+      {open && (
+        <>
+          <h1>University Name</h1>
+          <input
+            placeholder="university Name"
+            value={education.university}
+            onChange={handleUniNameChange}
+          />
+          <h1>Degree</h1>
+          <input
+            placeholder="Degree Name"
+            value={education.degree}
+            onChange={handleDegreeChange}
+          />
+          <h1>Location</h1>
+          <input
+            placeholder="Location"
+            value={education.location}
+            onChange={handleLocationChange}
+          />
+          <h1>Grade</h1>
+          <input
+            placeholder="Grade"
+            value={education.grade}
+            onChange={handleGradeChange}
+          />
+          <h1>Start Date</h1>
+          <input
+            placeholder="Start Date"
+            value={education.startDate}
+            onChange={handleStartDateChange}
+          />
+          <h1>End Date</h1>
+          <input
+            placeholder="End Date"
+            value={education.endDate}
+            onChange={handleEndDateChange}
+          />
 
-      <button onClick={handleClick}>Save</button>
+          <button onClick={handleClick}>Save</button>
+        </>
+      )}
     </div>
   );
 }

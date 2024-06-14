@@ -1,4 +1,5 @@
 import { useState } from "react";
+/* eslint react/prop-types: 0 */
 
 export function General({generalInfo, setGeneralInfo}) {
   // eslint-disable-next-line no-unused-vars

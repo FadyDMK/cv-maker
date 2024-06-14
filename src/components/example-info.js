@@ -5,6 +5,13 @@ export const exampleInfo = {
     phoneNumber: "+36 21 157 125",
     location:'Earth',
   },
-  education: [],
+  education: [{
+    degree: "Bachelor in Physics",
+    university: "Gluglug Intergalactic University",
+    location: "Andromeda Galaxy",
+    grade: "3.99/4",
+    startDate: "5/2010",
+    endDate: "6/2012",
+  }],
   work: [],
 };

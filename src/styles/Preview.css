@@ -1,0 +1,41 @@
+.education-header ,.work-header{
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.5cm;
+  background-color: #dbddde;
+  width: 90%;
+  position: relative;
+  height: auto;
+  margin: 0.5cm auto;
+  padding: 0.2cm;
+}
+
+.uni-info {
+  padding-left: 1cm;
+  display: flex;
+  flex-direction: column;
+  gap: 1cm;
+}
+.uni-info-unit {
+  display: flex;
+  gap: 1.5cm;
+}
+.location-date {
+  flex: 1;
+}
+
+.uni-degree {
+  flex: 2;
+}
+
+.uni {
+  font-weight: 800;
+}
+
+.date,
+.location,
+.uni,
+.degree,
+.grade {
+  margin: 0.3em 0;
+}

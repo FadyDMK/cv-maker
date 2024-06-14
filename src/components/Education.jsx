@@ -1,18 +1,18 @@
-import { exampleInfo } from "./example-info";
 import { useState } from "react";
+/* eslint react/prop-types: 0 */
 
-export function Education() {
+export function Education({ educations, setEducations }) {
   return (
     <div>
-      <EducationUnit />
+      <EducationUnit educations={educations} setEducations={setEducations} />
     </div>
   );
 }
 
-export function EducationUnit() {
+export function EducationUnit({ educations, setEducations }) {
   // eslint-disable-next-line no-unused-vars
   const [open, setOpen] = useState(false);
-  const [educations, setEducations] = useState(exampleInfo.education);
+
   const [education, setEducation] = useState({
     degree: "Bachelor in Physics",
     university: "Gluglug Intergalactic University",
@@ -35,7 +35,7 @@ export function EducationUnit() {
     setEducation({ ...education, startDate: e.target.value });
   }
   function handleLocationChange(e) {
-    setEducation({ ...education, startDate: e.target.value });
+    setEducation({ ...education, location: e.target.value });
   }
 
   function handleEndDateChange(e) {
@@ -53,17 +53,17 @@ export function EducationUnit() {
         endDate: education.endDate,
       },
     ];
-
     setEducations(newEducations);
     setEducation({
-      degree: "Bachelor in Physics",
-      university: "Gluglug Intergalactic University",
-      location: "Andromeda Galaxy",
-      grade: "3.99/4",
-      startDate: "5/2010",
-      endDate: "6/2012",
+      degree: "",
+      university: "",
+      location: "",
+      grade: "",
+      startDate: "",
+      endDate: "",
     });
   }
+
   function toggle() {
     setOpen(!open);
   }
@@ -77,7 +77,7 @@ export function EducationUnit() {
         <>
           <h1>University Name</h1>
           <input
-            placeholder="university Name"
+            placeholder="University Name"
             value={education.university}
             onChange={handleUniNameChange}
           />

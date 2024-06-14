@@ -5,9 +5,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-* {
+body {
   margin: 0;
   padding: 0;
+  background-color: #f3f4f6;
 }
 
 button {
@@ -30,6 +31,7 @@ button {
   font-size: 2.5rem;
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .personalInfo,
@@ -40,10 +42,6 @@ button {
   padding-bottom: 30px;
   border-radius: 20px;
   background-color: white;
-  box-shadow: -4px 10px 70px -13px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: -4px 10px 70px -13px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -4px 10px 70px -13px rgba(0, 0, 0, 0.75);
-
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -73,7 +71,7 @@ input {
   padding: 0.2rem;
   border: none;
   border-radius: 10px;
-  background-color: #eefcff;
+  background-color: #f3f4f6;
   width: 100%;
   height: 2rem;
   font-size: 0.8rem;
@@ -81,9 +79,37 @@ input {
 .container {
   display: flex;
 }
+.description-area{
+  padding: 0.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #f3f4f6;
+  width: 100%;
+  font-size: 0.8rem;
+  height: 4rem;
+}
+
+
+.btns{
+  display: flex;
+  gap: 1rem;
+}
+.add-btn ,.reset-btn{
+  border-radius: 2rem;
+  width: 20%;
+  padding: 1rem;
+}
+.add-btn{
+  background-color: #95b0b6;
+  border: none;
+}
+.reset-btn{
+  border: solid #95b0b6 2px;
+  background-color: none;
+}
 /*Preview styling*/
 .preview {
-  font-family: Arial,Cambria , Helvetica, sans-serif;
+  font-family: Arial, Cambria, Helvetica, sans-serif;
   border: solid black 1px;
   margin: 40px;
   margin-bottom: 20px;
@@ -91,34 +117,18 @@ input {
   width: 21cm;
   height: 29.7cm;
 }
-.cv-header {
-  color: white;
-  height: 5cm;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #103137;
-  gap: 0.6cm;
-}
-.email,
-.phone,
-.location {
-  display: flex;
-  align-items: center;
-  gap: 0.2cm;
-  font-size: 0.5cm;
-}
 
-.cv-header > h2 {
-  font-weight: 2cm;
-  font-size: 1.1cm;
-}
+
 
 .info {
   display: flex;
   text-align: center;
   justify-content: center;
   gap: 1cm;
+}
+
+.toggle {
+  border: none;
+  text-align: center;
+  cursor: pointer;
 }

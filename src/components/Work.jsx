@@ -1,21 +1,22 @@
-import { exampleInfo } from "./example-info";
 import { useState } from "react";
+/* eslint react/prop-types: 0 */
 
-export function Work() {
+export function Work({works, setWorks}) {
   return (
     <div>
-      <WorkUnit />
+      <WorkUnit works={works} setWorks={setWorks}/>
     </div>
   );
 }
 
-function WorkUnit() {
+function WorkUnit({works, setWorks}) {
   const [open, setOpen] = useState(false);
-  const [works, setWorks] = useState(exampleInfo.work);
+  
   const [work, setWork] = useState({
     position: "Scientist and Inventor",
     company: "SpaceX",
     location: "Florida, US",
+    description: "Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.",
     startDate: "1/2024",
     endDate: "present",
   });
@@ -33,16 +34,11 @@ function WorkUnit() {
         location: work.location,
         startDate: work.startDate,
         endDate: work.endDate,
+        description: work.description,
       },
     ];
     setWorks(newWorks);
-    setWork({
-      position: "Scientist and Inventor",
-      company: "SpaceX",
-      location: "Florida, US",
-      startDate: "1/2024",
-      endDate: "present",
-    });
+    resetWork();
   }
 
   function handlePositionChange(e) {
@@ -60,12 +56,25 @@ function WorkUnit() {
   function handleEndDateChange(e) {
     setWork({ ...work, endDate: e.target.value });
   }
+  function handleDescriptionChange(e) {
+    setWork({ ...work, description: e.target.value });
+  }
+  function resetWork(){
+    setWork({
+      position: "",
+      company: "",
+      location: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+    });
+  }
 
   return (
     <div className="work">
-      <button onClick={toggle}>
+      <div onClick={toggle} className="toggle">
         <h3>Work</h3>
-      </button>
+      </div>
       {open && (
         <>
           <h1>Position Name</h1>
@@ -79,6 +88,13 @@ function WorkUnit() {
             placeholder="Company"
             value={work.company}
             onChange={handleCompanyChange}
+          />
+          <h1>Job Description</h1>
+          <textarea
+            placeholder="description"
+            value={work.description}
+            onChange={handleDescriptionChange}
+            className="description-area"
           />
           <h1>Location</h1>
           <input
@@ -98,8 +114,10 @@ function WorkUnit() {
             value={work.endDate}
             onChange={handleEndDateChange}
           />
-
-          <button onClick={handleClick}>Save</button>
+          <div className="btns">
+          <button onClick={handleClick} className="add-btn">Add</button>
+          <button onClick={resetWork} className="reset-btn">Reset</button>
+          </div>
         </>
       )}
     </div>

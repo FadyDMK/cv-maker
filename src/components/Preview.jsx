@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 /* eslint react/prop-types: 0 */
 
-export function Preview({ generalInfo, educations }) {
+export function Preview({ generalInfo, educations , works}) {
   function EducationPreviewUnit() {
     return (
       <div className="uni-info">
@@ -31,8 +31,30 @@ export function Preview({ generalInfo, educations }) {
       </div>
     );
   }
-  function WorkPreviewUnit(){
-    
+  function WorkPreviewUnit() {
+    return (
+      <div className="work-info">
+        {works.map((element) => (
+          <>
+            <div className="uni-info-unit">
+              <div className="location-date">
+                <div className="date">
+                  {element.startDate} - {element.endDate}
+                </div>
+
+                <div className="location">{element.location}</div>
+              </div>
+              <div className="uni-degree">
+                <div className="uni">{element.position}</div>
+                <div className="degree">{element.company}</div>
+                <div className="grade">{element.description}</div>
+              </div>
+            </div>
+          </>
+        ))}
+      </div>
+    );
+
   }
   return (
     <div className="preview">

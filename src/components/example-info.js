@@ -13,5 +13,15 @@ export const exampleInfo = {
     startDate: "5/2010",
     endDate: "6/2012",
   }],
-  work: [],
+  work: [
+    {
+      position: "Scientist and Inventor",
+      company: "SpaceX",
+      location: "Florida, US",
+      description: "Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.",
+      startDate: "1/2024",
+      endDate: "present",
+
+    }
+  ],
 };

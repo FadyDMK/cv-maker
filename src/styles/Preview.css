@@ -1,4 +1,36 @@
-.education-header ,.work-header{
+.preview {
+  background-color: white;
+}
+/*Styling inside if the preview component */
+/*Cv header styling*/
+.cv-header {
+  color: white;
+  height: 5cm;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #103137;
+  gap: 0.1cm;
+}
+.email,
+.phone,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.2cm;
+  font-size: 0.5cm;
+}
+
+.cv-header > h2 {
+  font-weight: 2cm;
+  font-size: 1.1cm;
+}
+
+/*Education and work sections*/
+.education-header,
+.work-header {
   text-align: center;
   font-weight: 800;
   font-size: 0.5cm;
@@ -8,9 +40,11 @@
   height: auto;
   margin: 0.5cm auto;
   padding: 0.2cm;
+  color: #055958;
 }
 
-.uni-info {
+.uni-info,
+.work-info {
   padding-left: 1cm;
   display: flex;
   flex-direction: column;

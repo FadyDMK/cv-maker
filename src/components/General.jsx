@@ -23,9 +23,9 @@ export function General({generalInfo, setGeneralInfo}) {
 
   return (
     <div className="personalInfo">
-      <button onClick={toggle}>
+      <div onClick={toggle} className="toggle">
         <h3>General Information</h3>
-      </button>
+      </div>
       {open && (
       <>
         <h1>Full Name</h1>

@@ -41,6 +41,16 @@ export function EducationUnit({ educations, setEducations }) {
   function handleEndDateChange(e) {
     setEducation({ ...education, endDate: e.target.value });
   }
+  function resetEdu() {
+    setEducation({
+      degree: "",
+      university: "",
+      location: "",
+      grade: "",
+      startDate: "",
+      endDate: "",
+    });
+  }
   function handleClick() {
     const newEducations = [
       ...educations,
@@ -54,14 +64,7 @@ export function EducationUnit({ educations, setEducations }) {
       },
     ];
     setEducations(newEducations);
-    setEducation({
-      degree: "",
-      university: "",
-      location: "",
-      grade: "",
-      startDate: "",
-      endDate: "",
-    });
+    resetEdu();
   }
 
   function toggle() {
@@ -70,9 +73,9 @@ export function EducationUnit({ educations, setEducations }) {
 
   return (
     <div className="education">
-      <button onClick={toggle}>
+      <div onClick={toggle} className="toggle">
         <h3>Education</h3>
-      </button>
+      </div>
       {open && (
         <>
           <h1>University Name</h1>
@@ -111,8 +114,12 @@ export function EducationUnit({ educations, setEducations }) {
             value={education.endDate}
             onChange={handleEndDateChange}
           />
-
-          <button onClick={handleClick}>Save</button>
+          <div className="btns">
+            <button onClick={handleClick} className="add-btn">
+              Add
+            </button>
+            <button onClick={resetEdu} className="reset-btn">Reset</button>
+          </div>
         </>
       )}
     </div>

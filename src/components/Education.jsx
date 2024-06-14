@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 /* eslint react/prop-types: 0 */
 
 export function Education({ educations, setEducations }) {
@@ -74,7 +76,13 @@ export function EducationUnit({ educations, setEducations }) {
   return (
     <div className="education">
       <div onClick={toggle} className="toggle">
-        <h3>Education</h3>
+        <div className="title-arrow">
+          <h3>Education</h3>
+          <FontAwesomeIcon
+            icon={faChevronUp}
+            className={`arrow ${open ? "rotated" : "unrotated"}`}
+          />
+        </div>
       </div>
       {open && (
         <>
@@ -118,7 +126,9 @@ export function EducationUnit({ educations, setEducations }) {
             <button onClick={handleClick} className="add-btn">
               Add
             </button>
-            <button onClick={resetEdu} className="reset-btn">Reset</button>
+            <button onClick={resetEdu} className="reset-btn">
+              Reset
+            </button>
           </div>
         </>
       )}

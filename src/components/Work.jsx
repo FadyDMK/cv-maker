@@ -1,22 +1,25 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 /* eslint react/prop-types: 0 */
 
-export function Work({works, setWorks}) {
+export function Work({ works, setWorks }) {
   return (
     <div>
-      <WorkUnit works={works} setWorks={setWorks}/>
+      <WorkUnit works={works} setWorks={setWorks} />
     </div>
   );
 }
 
-function WorkUnit({works, setWorks}) {
+function WorkUnit({ works, setWorks }) {
   const [open, setOpen] = useState(false);
-  
+
   const [work, setWork] = useState({
     position: "Scientist and Inventor",
     company: "SpaceX",
     location: "Florida, US",
-    description: "Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.",
+    description:
+      "Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.",
     startDate: "1/2024",
     endDate: "present",
   });
@@ -59,7 +62,7 @@ function WorkUnit({works, setWorks}) {
   function handleDescriptionChange(e) {
     setWork({ ...work, description: e.target.value });
   }
-  function resetWork(){
+  function resetWork() {
     setWork({
       position: "",
       company: "",
@@ -73,7 +76,13 @@ function WorkUnit({works, setWorks}) {
   return (
     <div className="work">
       <div onClick={toggle} className="toggle">
-        <h3>Work</h3>
+        <div className="title-arrow">
+          <h3>Work</h3>
+          <FontAwesomeIcon
+            icon={faChevronUp}
+            className={`arrow ${open ? "rotated" : "unrotated"}`}
+          />
+        </div>
       </div>
       {open && (
         <>
@@ -115,8 +124,12 @@ function WorkUnit({works, setWorks}) {
             onChange={handleEndDateChange}
           />
           <div className="btns">
-          <button onClick={handleClick} className="add-btn">Add</button>
-          <button onClick={resetWork} className="reset-btn">Reset</button>
+            <button onClick={handleClick} className="add-btn">
+              Add
+            </button>
+            <button onClick={resetWork} className="reset-btn">
+              Reset
+            </button>
           </div>
         </>
       )}

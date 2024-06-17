@@ -6,6 +6,7 @@ import "./styles/Preview.css";
 import App from "./App";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -14,5 +15,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <App />
       <Footer />
     </div>
+    <SpeedInsights/>
   </React.StrictMode>
 );

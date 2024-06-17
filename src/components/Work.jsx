@@ -19,12 +19,12 @@ function WorkUnit({ works, setWorks }) {
   const [editClass, setEditClass] = useState("invisible");
 
   const [work, setWork] = useState({
-    position: "Scientist and Inventor",
-    company: "SpaceX",
-    location: "Florida, US",
-    description:"Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.",
-    startDate: "1/2024",
-    endDate: "present",
+    position: "",
+    company: "",
+    location: "",
+    description:"",
+    startDate: "",
+    endDate: "",
     id: "2",
   });
 

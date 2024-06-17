@@ -20,12 +20,12 @@ function EducationUnit({ educations, setEducations }) {
   const [editClass, setEditClass] = useState("invisible");
 
   const [education, setEducation] = useState({
-    degree: "Bachelor in Physics",
-    university: "Gluglug Intergalactic University",
-    location: "Andromeda Galaxy",
-    grade: "3.99/4",
-    startDate: "5/2010",
-    endDate: "6/2012",
+    degree: "",
+    university: "",
+    location: "",
+    grade: "",
+    startDate: "",
+    endDate: "",
   });
 
 

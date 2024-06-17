@@ -34,6 +34,7 @@ export const exampleInfo = {
         "Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.",
       startDate: "1/2024",
       endDate: "present",
+      id:"1"
     },
   ],
 };

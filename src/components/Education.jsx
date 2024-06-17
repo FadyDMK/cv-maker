@@ -16,6 +16,8 @@ function EducationUnit({ educations, setEducations }) {
   // eslint-disable-next-line no-unused-vars
   const [open, setOpen] = useState(false);
   const [edit, setEdit] = useState(true);
+  const [previewClass, setPreviewClass] = useState("visible");
+  const [editClass, setEditClass] = useState("invisible");
 
   const [education, setEducation] = useState({
     degree: "Bachelor in Physics",
@@ -26,8 +28,7 @@ function EducationUnit({ educations, setEducations }) {
     endDate: "6/2012",
   });
 
-  const [previewClass, setPreviewClass] = useState("visible");
-  const [editClass, setEditClass] = useState("invisible");
+
   function handleEdit(id) {
     setEdit(true);
     const edu = educations.find((element) => element.id == id);

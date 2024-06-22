@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import propTypes from "prop-types";
 
-/* eslint react/prop-types: 0 */
+General.propTypes = {
+  generalInfo: propTypes.exact({
+    fullName: propTypes.string,
+    email:propTypes.string,
+    phoneNumber:propTypes.oneOfType([propTypes.string,propTypes.number]),
+    location: propTypes.string,
+  }),
+  setGeneralInfo: propTypes.func.isRequired,
+};
 
 export function General({ generalInfo, setGeneralInfo }) {
   // eslint-disable-next-line no-unused-vars
